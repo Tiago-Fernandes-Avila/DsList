@@ -1,5 +1,7 @@
 package com.javaspring.DsList.entities;
 
+import org.hibernate.annotations.Type;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,19 +10,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "t-games")
+@Table(name = "tbGame")
 public class Game {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    @Column(name ="game_year")
+    @Column(name ="gameYear")
     private Integer year;
     private String genre;
-    private String plataforms;
+    private String platforms;
     private Double score;
     private String imgUrl;
     private String shortDescription;
+    @Column(length = 10000)
     private String longDescription;
 
   public Game(){
@@ -33,10 +36,11 @@ public class Game {
     this.title = title;
     this.year = year;
     this.genre = genre;
-    this.plataforms = plataforms;
+    this.platforms = plataforms;
     this.score = score;
     this.imgUrl = imgUrl;
     this.shortDescription = shortDescription;
+    
     this.longDescription = longDescription;
   }
 
@@ -73,11 +77,11 @@ public class Game {
   }
 
   public String getPlataforms() {
-    return plataforms;
+    return platforms;
   }
 
   public void setPlataforms(String plataforms) {
-    this.plataforms = plataforms;
+    this.platforms = plataforms;
   }
 
   public Double getScore() {
