@@ -1,5 +1,6 @@
 package com.javaspring.DsList.dto;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.javaspring.DsList.entities.Game;
 
 public class GameMinDTO {
@@ -23,6 +24,7 @@ public class GameMinDTO {
     public Integer getYear() {
         return year;
     }
+   
   
     public GameMinDTO(Game game) {
         this.id = game.getId();
