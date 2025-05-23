@@ -2,6 +2,7 @@ package com.javaspring.DsList.dto;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.javaspring.DsList.entities.Game;
+import com.javaspring.DsList.projections.GameMinProjection;
 
 public class GameMinDTO {
     private Long id;
@@ -32,6 +33,14 @@ public class GameMinDTO {
         this.imgUrl = game.getImgUrl();
         this.shortText =game.getShortDescription();
         this.year = game.getYear();
+    }
+
+    public GameMinDTO(GameMinProjection projection){
+        this.id = projection.getId();
+        this.title = projection.getTitle();
+        this.year = projection.getGameYear();
+        this.imgUrl = projection.getImgUrl();
+        this.shortText = projection.getShortDescription();
     }
     
      public GameMinDTO(){

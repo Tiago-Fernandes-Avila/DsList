@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.javaspring.DsList.dto.GameDTO;
 import com.javaspring.DsList.dto.GameMinDTO;
 import com.javaspring.DsList.entities.Game;
+import com.javaspring.DsList.projections.GameMinProjection;
 import com.javaspring.DsList.services.GameServices;
 
 @RestController
@@ -32,6 +33,7 @@ public class GameController {
     public GameDTO findGameById(@PathVariable Long id){
         return gameServices.findById(id);
     }
+
     
 
 

@@ -7,7 +7,7 @@ import jakarta.persistence.ManyToOne;
 @Embeddable                     //significa que incorporamos 2 entidades para ser um chave primaria
 public class BelongingPK {
     @ManyToOne
-    @JoinColumn(name = "name_id")
+    @JoinColumn(name = "game_id")
     private Game game;
     
     @ManyToOne
